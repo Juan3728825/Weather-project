@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', fetchWeather);
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
     // se obtienene los elementos de ciudad y codigo del pais
     const city = document.getElementById('city').value;
+    const countryCode = document.getElementById('country-code').value;
 
     weather.changeLocation(city,countryCode);
     store.setlocationData(city, countryCode);

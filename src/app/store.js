@@ -1,13 +1,11 @@
 export class Store {
-    constructor()
-    {
+    constructor() {
         this.city;
         this.countryCode;
         this.defaultCity = 'Medellin';
         this.defaultCountry = 'CO';
     }
-    getLocationData()
-    {
+    getLocationData() {
         if (localStorage.getItem('city') === null) {
             this.city = this.defaultCity;
         } else {
@@ -16,18 +14,17 @@ export class Store {
 
         if (localStorage.getItem('countryCode') === null) {
             this.countryCode = this.defaultCountry;
-    } else {
-        this.countryCode = localStorage.getItem('countryCode');
+        } else {
+            this.countryCode = localStorage.getItem('countryCode');
+        }
+
+        return {
+            city: this.city,
+            countryCode: this.countryCode
+        }
     }
 
-    return {
-        city: this.city,
-        countryCode: this.countryCode
-    }
-}
-
-    setlocationData(city, countryCode)
-    {
+    setlocationData(city, countryCode) {
         localStorage.setItem('city', city);
         localStorage.setItem('countryCode', countryCode);
     }
